@@ -29,14 +29,14 @@
 - wp-cli/php-cli-tools — библиотека для удобного ввода/вывода в консоли.
 ## Структура проекта
 
-Task01/GCD
-├── bin/
-│   └── gcd       # Запускной файл игры
-├── src/
-│   ├── Controller.php        # Логика управления игрой
-│   └── View.php              # Функции отображения
-├── composer.json             # Файл конфигурации Composer
-└── README.md                 # Описание проекта
+Task01/GCD \
+├── bin/ \
+│   └── gcd       # Запускной файл игры \
+├── src/ \
+│   ├── Controller.php        # Логика управления игрой \
+│   └── View.php              # Функции отображения \
+├── composer.json             # Файл конфигурации Composer \
+└── README.md                 # Описание проекта \
 ## Как играть
 После запуска игры на экране появятся два числа. Ваша задача — найти их наибольший общий делитель. Для этого:
 
@@ -52,7 +52,7 @@ Task01/GCD
     Correct!
 ```
 ## Ссылки
-Packagist: GCD Game[https://packagist.org/packages/shindasayonara/php_puchkin_iyu]
-Репозиторий на GitHub[https://github.com/shindasayonara/GCD_Game]
-Автор: shindasayonara
-Лицензия: MIT
+- Packagist: [GCD Game](https://packagist.org/packages/shindasayonara/php_puchkin_iyu)
+- [Репозиторий на GitHub](https://github.com/shindasayonara/GCD_Game)
+- Автор: shindasayonara
+- Лицензия: MIT
