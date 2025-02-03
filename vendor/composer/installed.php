@@ -1,4 +1,6 @@
-<?php return array(
+<?php
+
+return array(
     'root' => array(
         'name' => 'shindasayonara/php_puchkin_iyu',
         'pretty_version' => 'dev-master',

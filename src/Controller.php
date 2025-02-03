@@ -1,8 +1,11 @@
 <?php
+
 namespace Shindasayonara\GCD\Controller;
 
 use Shindasayonara\GCD\View;
 
-function startGame() {
+function startGame()
+{
+
     View\displayStartScreen();
 }
