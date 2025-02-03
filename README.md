@@ -7,7 +7,7 @@
 ### Локальная установка
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/GitHub_login/Game_name.git
+   git clone https://github.com/shindasayonara/GCD_Game.git
    cd Game_name
 2. Установите зависимости через Composer:
     ```bash
@@ -19,7 +19,7 @@
 1. Убедитесь, что Composer установлен глобально.
 2. Установите игру:
     ```bash
-    composer global require github_login/game_name
+    composer global require shindasayonara/GCD_Game
 3. Запустите игру из командной строки:
     ```bash
     gcd
