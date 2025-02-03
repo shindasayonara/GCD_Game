@@ -19,7 +19,7 @@
 1. Убедитесь, что Composer установлен глобально.
 2. Установите игру:
     ```bash
-    composer global require shindasayonara/GCD_Game
+    composer global require shindasayonara/php_puchkin_iyu
 3. Запустите игру из командной строки:
     ```bash
     gcd
