@@ -52,7 +52,7 @@ Task01/GCD
     Correct!
 ```
 ## Ссылки
-Packagist: GCD Game("https://packagist.org/packages/shindasayonara/php_puchkin_iyu")
-Репозиторий на GitHub
+Packagist: GCD Game[https://packagist.org/packages/shindasayonara/php_puchkin_iyu]
+Репозиторий на GitHub[https://github.com/shindasayonara/GCD_Game]
 Автор: shindasayonara
 Лицензия: MIT
