@@ -2,8 +2,12 @@
 
 namespace Shindasayonara\GCD\View;
 
-function displayStartScreen()
+function displayQuestion($num1, $num2)
 {
+    echo "Найди НОД чисел $num1 и $num2: ";
+}
 
-    echo "Welcome to the Game! This is a alpha test build!\n";
+function displayResult($message)
+{
+    echo "$message\n";
 }
