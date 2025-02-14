@@ -27,10 +27,10 @@ abstract class Progress extends \cli\Notify
     /**
      * Instantiates a Progress Notifier.
      *
-     * @param string  $msg       The text to display next to the Notifier.
-     * @param int     $total     The total number of ticks we will be performing.
-     * @param int     $interval  The interval in milliseconds between updates.
-     * @see cli\Progress::setTotal()
+     * @param string $msg      The text to display next to the Notifier.
+     * @param int    $total    The total number of ticks we will be performing.
+     * @param int    $interval The interval in milliseconds between updates.
+     * @see   cli\Progress::setTotal()
      */
     public function __construct($msg, $total, $interval = 100)
     {
@@ -41,7 +41,7 @@ abstract class Progress extends \cli\Notify
     /**
      * Set the max increments for this progress notifier.
      *
-     * @param int  $total  The total number of times this indicator should be `tick`ed.
+     * @param  int $total The total number of times this indicator should be `tick`ed.
      * @throws \InvalidArgumentException  Thrown if the `$total` is less than 0.
      */
     public function setTotal($total)
@@ -70,7 +70,7 @@ abstract class Progress extends \cli\Notify
      * is padded to match the length of `cli\Progress::total()`.
      *
      * @return string  The formatted and padded tick count.
-     * @see cli\Progress::total()
+     * @see    cli\Progress::total()
      */
     public function current()
     {
@@ -94,8 +94,8 @@ abstract class Progress extends \cli\Notify
      *
      * @return int  The estimated total number of seconds for all ticks to be
      *              completed. This is not the estimated time left, but total.
-     * @see cli\Notify::speed()
-     * @see cli\Notify::elapsed()
+     * @see    cli\Notify::speed()
+     * @see    cli\Notify::elapsed()
      */
     public function estimated()
     {
@@ -122,7 +122,7 @@ abstract class Progress extends \cli\Notify
      * Increments are tick counter by the given amount. If no amount is provided,
      * the ticker is incremented by 1.
      *
-     * @param int  $increment  The amount to increment by.
+     * @param int $increment The amount to increment by.
      */
     public function increment($increment = 1)
     {

@@ -42,9 +42,9 @@ class Table
      *     table are used as the header values.
      *  3. Pass nothing and use `setHeaders()` and `addRow()` or `setRows()`.
      *
-     * @param array  $headers  Headers used in this table. Optional.
-     * @param array  $rows     The rows of data for this table. Optional.
-     * @param array  $footers  Footers used in this table. Optional.
+     * @param array $headers Headers used in this table. Optional.
+     * @param array $rows    The rows of data for this table. Optional.
+     * @param array $footers Footers used in this table. Optional.
      */
     public function __construct(array $headers = array(), array $rows = array(), array $footers = array())
     {
@@ -88,7 +88,7 @@ class Table
     /**
      * Sets the renderer used by this table.
      *
-     * @param table\Renderer  $renderer  The renderer to use for output.
+     * @param table\Renderer $renderer The renderer to use for output.
      * @see   table\Renderer
      * @see   table\Ascii
      * @see   table\Tabular
@@ -101,7 +101,7 @@ class Table
     /**
      * Loops through the row and sets the maximum width for each column.
      *
-     * @param array  $row  The table row.
+     * @param  array $row The table row.
      * @return array $row
      */
     protected function checkRow(array $row)
@@ -177,7 +177,7 @@ class Table
     /**
      * Sort the table by a column. Must be called before `cli\Table::display()`.
      *
-     * @param int  $column  The index of the column to sort by.
+     * @param int $column The index of the column to sort by.
      */
     public function sort($column)
     {
@@ -186,15 +186,17 @@ class Table
             return;
         }
 
-        usort($this->_rows, function ($a, $b) use ($column) {
-            return strcmp($a[$column], $b[$column]);
-        });
+        usort(
+            $this->_rows, function ($a, $b) use ($column) {
+                return strcmp($a[$column], $b[$column]);
+            }
+        );
     }
 
     /**
      * Set the headers of the table.
      *
-     * @param array  $headers  An array of strings containing column header names.
+     * @param array $headers An array of strings containing column header names.
      */
     public function setHeaders(array $headers)
     {
@@ -204,7 +206,7 @@ class Table
     /**
      * Set the footers of the table.
      *
-     * @param array  $footers  An array of strings containing column footers names.
+     * @param array $footers An array of strings containing column footers names.
      */
     public function setFooters(array $footers)
     {
@@ -215,8 +217,8 @@ class Table
     /**
      * Add a row to the table.
      *
-     * @param array  $row  The row data.
-     * @see cli\Table::checkRow()
+     * @param array $row The row data.
+     * @see   cli\Table::checkRow()
      */
     public function addRow(array $row)
     {
@@ -226,8 +228,8 @@ class Table
     /**
      * Clears all previous rows and adds the given rows.
      *
-     * @param array  $rows  A 2-dimensional array of row data.
-     * @see cli\Table::addRow()
+     * @param array $rows A 2-dimensional array of row data.
+     * @see   cli\Table::addRow()
      */
     public function setRows(array $rows)
     {
@@ -246,7 +248,7 @@ class Table
      * Set whether items in an Ascii table are pre-colorized.
      *
      * @param bool|array $precolorized A boolean to set all columns in the table as pre-colorized, or an array of booleans keyed by column index (number) to set individual columns as pre-colorized.
-     * @see cli\Ascii::setPreColorized()
+     * @see   cli\Ascii::setPreColorized()
      */
     public function setAsciiPreColorized($pre_colorized)
     {
@@ -258,9 +260,9 @@ class Table
     /**
      * Is a column in an Ascii table pre-colorized?
      *
-     * @param int $column Column index to check.
+     * @param  int $column Column index to check.
      * @return bool True if whole Ascii table is marked as pre-colorized, or if the individual column is pre-colorized; else false.
-     * @see cli\Ascii::isPreColorized()
+     * @see    cli\Ascii::isPreColorized()
      */
     private function isAsciiPreColorized($column)
     {

@@ -24,7 +24,7 @@ class Lexer extends Memoize implements \Iterator
     private $_first = true;
 
     /**
-     * @param array  $items  A list of strings to process as tokens.
+     * @param array $items A list of strings to process as tokens.
      */
     public function __construct(array $items)
     {
@@ -103,7 +103,7 @@ class Lexer extends Memoize implements \Iterator
     /**
      * Push an element to the front of the stack.
      *
-     * @param mixed  $item  The value to set
+     * @param mixed $item The value to set
      */
     public function unshift($item)
     {

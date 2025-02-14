@@ -11,7 +11,7 @@ ini_set('html_errors', 0);
 
 foreach (array(__DIR__ . '/../vendor', __DIR__ . '/../../../../vendor') as $vendorDir) {
     if (is_dir($vendorDir)) {
-        require_once $vendorDir . '/autoload.php';
+        include_once $vendorDir . '/autoload.php';
         break;
     }
 }

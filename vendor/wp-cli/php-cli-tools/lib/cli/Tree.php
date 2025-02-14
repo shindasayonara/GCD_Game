@@ -24,7 +24,7 @@ class Tree
     /**
      * Sets the renderer used by this tree.
      *
-     * @param tree\Renderer  $renderer  The renderer to use for output.
+     * @param tree\Renderer $renderer The renderer to use for output.
      * @see   tree\Renderer
      * @see   tree\Ascii
      * @see   tree\Markdown
@@ -43,6 +43,7 @@ class Tree
      *         ],
      *         'Thing',
      *     ]
+     *
      * @param array $data
      */
     public function setData(array $data)

@@ -39,8 +39,8 @@ abstract class Notify
     /**
      * Instatiates a Notification object.
      *
-     * @param string  $msg       The text to display next to the Notifier.
-     * @param int     $interval  The interval in milliseconds between updates.
+     * @param string $msg      The text to display next to the Notifier.
+     * @param int    $interval The interval in milliseconds between updates.
      */
     public function __construct($msg, $interval = 100)
     {
@@ -53,8 +53,8 @@ abstract class Notify
      * called from `cli\Notify::tick()` after `cli\Notify::$_interval` has passed.
      *
      * @abstract
-     * @param boolean  $finish
-     * @see cli\Notify::tick()
+     * @param    boolean $finish
+     * @see      cli\Notify::tick()
      */
     abstract public function display($finish = false);
 
@@ -123,7 +123,7 @@ abstract class Notify
      * Takes a time span given in seconds and formats it for display. The
      * returned string will be in MM:SS form.
      *
-     * @param int  $time The time span in seconds to format.
+     * @param  int $time The time span in seconds to format.
      * @return string  The formatted time span.
      */
     public function formatTime($time)
@@ -148,7 +148,7 @@ abstract class Notify
      * Increments are tick counter by the given amount. If no amount is provided,
      * the ticker is incremented by 1.
      *
-     * @param int  $increment  The amount to increment by.
+     * @param int $increment The amount to increment by.
      */
     public function increment($increment = 1)
     {
@@ -181,10 +181,10 @@ abstract class Notify
      * This method is the meat of all Notifiers. First we increment the ticker
      * and then update the display if enough time has passed since our last tick.
      *
-     * @param int  $increment  The amount to increment by.
-     * @see cli\Notify::increment()
-     * @see cli\Notify::shouldUpdate()
-     * @see cli\Notify::display()
+     * @param int $increment The amount to increment by.
+     * @see   cli\Notify::increment()
+     * @see   cli\Notify::shouldUpdate()
+     * @see   cli\Notify::display()
      */
     public function tick($increment = 1)
     {

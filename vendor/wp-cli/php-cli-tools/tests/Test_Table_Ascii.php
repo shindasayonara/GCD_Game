@@ -271,7 +271,7 @@ OUT;
      * Verifies that Input and Output equals,
      * Sugar method for fast access from tests
      *
-     * @param array $input First element is header array, second element is rows array
+     * @param array $input  First element is header array, second element is rows array
      * @param mixed $output Expected output
      */
     private function assertInOutEquals(array $input, $output)

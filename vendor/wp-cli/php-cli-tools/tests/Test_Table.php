@@ -87,9 +87,11 @@ class Test_Table extends TestCase
         $renderer = new cli\Table\Ascii();
 
         $strip_borders = function ($a) {
-            return array_map(function ($v) {
-                return substr($v, 2, -2);
-            }, $a);
+            return array_map(
+                function ($v) {
+                    return substr($v, 2, -2);
+                }, $a
+            );
         };
 
         $renderer->setWidths(array( 10 ));
@@ -138,7 +140,8 @@ class Test_Table extends TestCase
         $table->addRow(array( 'ID', 2151 ));
         $table->addRow(array( 'post_author', 1 ));
         $table->addRow(array( 'post_title', 'only-english-lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore' ));
-        $table->addRow(array( 'post_content',
+        $table->addRow(
+            array( 'post_content',
             //'ให้รู้จัก ให้หาหนทางใหม่' .
             '♫ มีอีกหลายต่อหลายคน เขาอดทนก็เพื่อรัก' . "\n" .
             'รักผลักดันให้รู้จัก ให้หาหนทางใหม่' . "\r\n" .
@@ -151,7 +154,8 @@ class Test_Table extends TestCase
             ' ジョバンニはまっ赤になってうなずきました。けれどもいつかジョバンニの眼のなかには涙がいっぱいになりました。そうだ僕は知っていたのだ、もちろんカムパネルラも知っている。' . "\r\n" .
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore' . "\n" .
             ''
-        ));
+            )
+        );
 
         $out = $table->getDisplayLines();
         for ($i = 0; $i < count($out); $i++) {

@@ -21,7 +21,7 @@ class Tabular extends Renderer
     /**
      * Renders a row for output.
      *
-     * @param array  $row  The table row.
+     * @param  array $row The table row.
      * @return string  The formatted table row.
      */
     public function row(array $row)

@@ -37,14 +37,15 @@ class Bar extends Progress
      * Prints the progress bar to the screen with percent complete, elapsed time
      * and estimated total time.
      *
-     * @param boolean  $finish  `true` if this was called from
-     *                          `cli\Notify::finish()`, `false` otherwise.
-     * @see cli\out()
-     * @see cli\Notify::formatTime()
-     * @see cli\Notify::elapsed()
-     * @see cli\Progress::estimated();
-     * @see cli\Progress::percent()
-     * @see cli\Shell::columns()
+     * @param boolean $finish `true` if this was called from
+     *                        `cli\Notify::finish()`,
+     *                        `false` otherwise.
+     * @see   cli\out()
+     * @see   cli\Notify::formatTime()
+     * @see   cli\Notify::elapsed()
+     * @see   cli\Progress::estimated();
+     * @see   cli\Progress::percent()
+     * @see   cli\Shell::columns()
      */
     public function display($finish = false)
     {
@@ -77,7 +78,7 @@ class Bar extends Progress
      *
      * @param int    $increment The amount to increment by.
      * @param string $msg       The text to display next to the Notifier. (optional)
-     * @see cli\Notify::tick()
+     * @see   cli\Notify::tick()
      */
     public function tick($increment = 1, $msg = null)
     {

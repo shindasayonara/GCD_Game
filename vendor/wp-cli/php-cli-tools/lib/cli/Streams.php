@@ -29,8 +29,8 @@ class Streams
      * then each key in the array will be the placeholder name. Placeholders are of the
      * format {:key}.
      *
-     * @param string   $msg  The message to render.
-     * @param mixed    ...   Either scalar arguments or a single array argument.
+     * @param  string $msg The message to render.
+     * @param  mixed    ...   Either scalar arguments or a single array argument.
      * @return string  The rendered string.
      */
     public static function render($msg)
@@ -66,10 +66,10 @@ class Streams
      * Shortcut for printing to `STDOUT`. The message and parameters are passed
      * through `sprintf` before output.
      *
-     * @param string  $msg  The message to output in `printf` format.
-     * @param mixed   ...   Either scalar arguments or a single array argument.
+     * @param  string $msg The message to output in `printf` format.
+     * @param  mixed   ...   Either scalar arguments or a single array argument.
      * @return void
-     * @see \cli\render()
+     * @see    \cli\render()
      */
     public static function out($msg)
     {
@@ -79,10 +79,10 @@ class Streams
     /**
      * Pads `$msg` to the width of the shell before passing to `cli\out`.
      *
-     * @param string  $msg  The message to pad and pass on.
-     * @param mixed   ...   Either scalar arguments or a single array argument.
+     * @param  string $msg The message to pad and pass on.
+     * @param  mixed   ...   Either scalar arguments or a single array argument.
      * @return void
-     * @see cli\out()
+     * @see    cli\out()
      */
     public static function out_padded($msg)
     {
@@ -109,9 +109,9 @@ class Streams
      * Shortcut for printing to `STDERR`. The message and parameters are passed
      * through `sprintf` before output.
      *
-     * @param string  $msg  The message to output in `printf` format. With no string,
-     *                      a newline is printed.
-     * @param mixed   ...   Either scalar arguments or a single array argument.
+     * @param  string $msg The message to output in `printf` format. With no string,
+     *                     a newline is printed.
+     * @param  mixed   ...   Either scalar arguments or a single array argument.
      * @return void
      */
     public static function err($msg = '')
@@ -126,10 +126,10 @@ class Streams
      * Takes input from `STDIN` in the given format. If an end of transmission
      * character is sent (^D), an exception is thrown.
      *
-     * @param string  $format  A valid input format. See `fscanf` for documentation.
+     * @param  string  $format A valid input format. See `fscanf` for documentation.
      *                         If none is given, all input up to the first newline
      *                         is accepted.
-     * @param boolean $hide    If true will hide what the user types in.
+     * @param  boolean $hide   If true will hide what the user types in.
      * @return string  The input with whitespace trimmed.
      * @throws \Exception  Thrown if ctrl-D (EOT) is sent as input.
      */
@@ -161,13 +161,13 @@ class Streams
      * Displays an input prompt. If no default value is provided the prompt will
      * continue displaying until input is received.
      *
-     * @param string      $question The question to ask the user.
-     * @param bool|string $default  A default value if the user provides no input.
-     * @param string      $marker   A string to append to the question and default value
-     *                              on display.
-     * @param boolean     $hide     Optionally hides what the user types in.
+     * @param  string      $question The question to ask the user.
+     * @param  bool|string $default  A default value if the user provides no input.
+     * @param  string      $marker   A string to append to the question and default value
+     *                               on display.
+     * @param  boolean     $hide     Optionally hides what the user types in.
      * @return string  The users input.
-     * @see cli\input()
+     * @see    cli\input()
      */
     public static function prompt($question, $default = false, $marker = ': ', $hide = false)
     {
@@ -192,11 +192,11 @@ class Streams
      * Presents a user with a multiple choice question, useful for 'yes/no' type
      * questions (which this public static function defaults too).
      *
-     * @param string  $question  The question to ask the user.
-     * @param string  $choice    A string of characters allowed as a response. Case is ignored.
-     * @param string  $default   The default choice. NULL if a default is not allowed.
+     * @param  string $question The question to ask the user.
+     * @param  string $choice   A string of characters allowed as a response. Case is ignored.
+     * @param  string $default  The default choice. NULL if a default is not allowed.
      * @return string  The users choice.
-     * @see cli\prompt()
+     * @see    cli\prompt()
      */
     public static function choose($question, $choice = 'yn', $default = 'n')
     {
@@ -226,13 +226,13 @@ class Streams
      * choose an option. The array must be a single dimension with either strings
      * or objects with a `__toString()` method.
      *
-     * @param array   $items    The list of items the user can choose from.
-     * @param string  $default  The index of the default item.
-     * @param string  $title    The message displayed to the user when prompted.
+     * @param  array  $items   The list of items the user can choose from.
+     * @param  string $default The index of the default item.
+     * @param  string $title   The message displayed to the user when prompted.
      * @return string  The index of the chosen item.
-     * @see cli\line()
-     * @see cli\input()
-     * @see cli\err()
+     * @see    cli\line()
+     * @see    cli\input()
+     * @see    cli\err()
      */
     public static function menu($items, $default = null, $title = 'Choose an item')
     {
@@ -277,8 +277,8 @@ class Streams
      * Any custom streams will be closed for you on shutdown, so please don't close stream
      * resources used with this method.
      *
-     * @param string    $whichStream  The stream property to update
-     * @param resource  $stream       The new stream resource to use
+     * @param  string   $whichStream The stream property to update
+     * @param  resource $stream      The new stream resource to use
      * @return void
      * @throws \Exception Thrown if $stream is not a resource of the 'stream' type.
      */
@@ -290,8 +290,10 @@ class Streams
         if (property_exists(__CLASS__, $whichStream)) {
             static::${$whichStream} = $stream;
         }
-        register_shutdown_function(function () use ($stream) {
-            fclose($stream);
-        });
+        register_shutdown_function(
+            function () use ($stream) {
+                fclose($stream);
+            }
+        );
     }
 }

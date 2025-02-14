@@ -29,11 +29,12 @@ class Spinner extends Notify
      * Prints the current spinner position to `STDOUT` with the time elapsed
      * and tick speed.
      *
-     * @param boolean  $finish  `true` if this was called from
-     *                          `cli\Notify::finish()`, `false` otherwise.
-     * @see cli\out_padded()
-     * @see cli\Notify::formatTime()
-     * @see cli\Notify::speed()
+     * @param boolean $finish `true` if this was called from
+     *                        `cli\Notify::finish()`,
+     *                        `false` otherwise.
+     * @see   cli\out_padded()
+     * @see   cli\Notify::formatTime()
+     * @see   cli\Notify::speed()
      */
     public function display($finish = false)
     {

@@ -31,7 +31,7 @@ class Argument extends Memoize
     private $_raw;
 
     /**
-     * @param string  $argument  The raw argument, leading dashes included.
+     * @param string $argument The raw argument, leading dashes included.
      */
     public function __construct($argument)
     {

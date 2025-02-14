@@ -80,7 +80,7 @@ class Colors
     /**
      * Set the color.
      *
-     * @param string  $color  The name of the color or style to set.
+     * @param  string $color The name of the color or style to set.
      * @return string
      */
     public static function color($color)
@@ -114,8 +114,8 @@ class Colors
      * Colorize a string using helpful string formatters. If the `Streams::$out` points to a TTY coloring will be enabled,
      * otherwise disabled. You can control this check with the `$colored` parameter.
      *
-     * @param string   $string
-     * @param boolean  $colored  Force enable or disable the colorized output. If left as `null` the TTY will control coloring.
+     * @param  string  $string
+     * @param  boolean $colored Force enable or disable the colorized output. If left as `null` the TTY will control coloring.
      * @return string
      */
     public static function colorize($string, $colored = null)
@@ -148,8 +148,8 @@ class Colors
     /**
      * Remove color information from a string.
      *
-     * @param string $string A string with color information.
-     * @param int    $keep   Optional. If the 1 bit is set, color tokens (eg "%n") won't be stripped. If the 2 bit is set, color encodings (ANSI escapes) won't be stripped. Default 0.
+     * @param  string $string A string with color information.
+     * @param  int    $keep   Optional. If the 1 bit is set, color tokens (eg "%n") won't be stripped. If the 2 bit is set, color encodings (ANSI escapes) won't be stripped. Default 0.
      * @return string A string with color information removed.
      */
     public static function decolorize($string, $keep = 0)
@@ -176,8 +176,8 @@ class Colors
     /**
      * Cache the original, colorized, and decolorized versions of a string.
      *
-     * @param string $passed The original string before colorization.
-     * @param string $colorized The string after running through self::colorize.
+     * @param string $passed     The original string before colorization.
+     * @param string $colorized  The string after running through self::colorize.
      * @param string $deprecated Optional. Not used. Default null.
      */
     public static function cacheString($passed, $colorized, $deprecated = null)
@@ -192,7 +192,7 @@ class Colors
     /**
      * Return the length of the string without color codes.
      *
-     * @param string  $string  the string to measure
+     * @param  string $string the string to measure
      * @return int
      */
     public static function length($string)
@@ -203,9 +203,9 @@ class Colors
     /**
      * Return the width (length in characters) of the string without color codes if enabled.
      *
-     * @param string      $string        The string to measure.
-     * @param bool        $pre_colorized Optional. Set if the string is pre-colorized. Default false.
-     * @param string|bool $encoding      Optional. The encoding of the string. Default false.
+     * @param  string      $string        The string to measure.
+     * @param  bool        $pre_colorized Optional. Set if the string is pre-colorized. Default false.
+     * @param  string|bool $encoding      Optional. The encoding of the string. Default false.
      * @return int
      */
     public static function width($string, $pre_colorized = false, $encoding = false)
@@ -216,11 +216,11 @@ class Colors
     /**
      * Pad the string to a certain display length.
      *
-     * @param string      $string        The string to pad.
-     * @param int         $length        The display length.
-     * @param bool        $pre_colorized Optional. Set if the string is pre-colorized. Default false.
-     * @param string|bool $encoding      Optional. The encoding of the string. Default false.
-     * @param int         $pad_type      Optional. Can be STR_PAD_RIGHT, STR_PAD_LEFT, or STR_PAD_BOTH. If pad_type is not specified it is assumed to be STR_PAD_RIGHT.
+     * @param  string      $string        The string to pad.
+     * @param  int         $length        The display length.
+     * @param  bool        $pre_colorized Optional. Set if the string is pre-colorized. Default false.
+     * @param  string|bool $encoding      Optional. The encoding of the string. Default false.
+     * @param  int         $pad_type      Optional. Can be STR_PAD_RIGHT, STR_PAD_LEFT, or STR_PAD_BOTH. If pad_type is not specified it is assumed to be STR_PAD_RIGHT.
      * @return string
      */
     public static function pad($string, $length, $pre_colorized = false, $encoding = false, $pad_type = STR_PAD_RIGHT)

@@ -5,6 +5,7 @@ use WP_CLI\Tests\TestCase;
 
 /**
  * Class Test_Arguments
+ *
  * @todo add more tests to increase coverage
  *
  * @backupGlobals enabled
@@ -13,18 +14,21 @@ class Test_Arguments extends TestCase
 {
     /**
      * Array of expected settings
+     *
      * @var array
      */
     protected $settings = null;
 
     /**
      * Array of flags
+     *
      * @var array
      */
     protected $flags = null;
 
     /**
      * Array of expected options
+     *
      * @var array
      */
     protected $options = null;
@@ -41,7 +45,7 @@ class Test_Arguments extends TestCase
     /**
      * Add one or more element(s) at the end of the $_SERVER['argv'] array
      *
-     * @param  array $args: value(s) to add to the argv array
+     * @param array $args: value(s) to add to the argv array
      */
     public static function pushToArgv($args)
     {
@@ -228,8 +232,8 @@ class Test_Arguments extends TestCase
     /**
      * Generic private testParse method.
      *
-     * @param  array $args           arguments as they appear in the cli
-     * @param  array $expectedValues expected values after parsing
+     * @param array $args           arguments as they appear in the cli
+     * @param array $expectedValues expected values after parsing
      */
     private function _testParse($cliParams, $expectedValues)
     {
@@ -250,8 +254,8 @@ class Test_Arguments extends TestCase
     }
 
     /**
-     * @param  array $args           arguments as they appear in the cli
-     * @param  array $expectedValues expected values after parsing
+     * @param array $args           arguments as they appear in the cli
+     * @param array $expectedValues expected values after parsing
      *
      * @dataProvider settingsWithValidOptions
      */
@@ -261,8 +265,8 @@ class Test_Arguments extends TestCase
     }
 
     /**
-     * @param  array $args           arguments as they appear in the cli
-     * @param  array $expectedValues expected values after parsing
+     * @param        array $args           arguments as they appear in the cli
+     * @param        array $expectedValues expected values after parsing
      * @dataProvider settingsWithMissingOptions
      */
     public function testParseWithMissingOptions($cliParams, $expectedValues)
@@ -273,8 +277,8 @@ class Test_Arguments extends TestCase
     }
 
     /**
-     * @param  array $args           arguments as they appear in the cli
-     * @param  array $expectedValues expected values after parsing
+     * @param        array $args           arguments as they appear in the cli
+     * @param        array $expectedValues expected values after parsing
      * @dataProvider settingsWithMissingOptionsWithDefault
      */
     public function testParseWithMissingOptionsWithDefault($cliParams, $expectedValues)
@@ -283,8 +287,8 @@ class Test_Arguments extends TestCase
     }
 
     /**
-     * @param  array $args           arguments as they appear in the cli
-     * @param  array $expectedValues expected values after parsing
+     * @param        array $args           arguments as they appear in the cli
+     * @param        array $expectedValues expected values after parsing
      * @dataProvider settingsWithNoOptionsWithDefault
      */
     public function testParseWithNoOptionsWithDefault($cliParams, $expectedValues)

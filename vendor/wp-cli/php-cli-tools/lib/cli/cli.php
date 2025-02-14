@@ -19,8 +19,8 @@ namespace cli;
  * then each key in the array will be the placeholder name. Placeholders are of the
  * format {:key}.
  *
- * @param string   $msg  The message to render.
- * @param mixed    ...   Either scalar arguments or a single array argument.
+ * @param  string $msg The message to render.
+ * @param  mixed    ...   Either scalar arguments or a single array argument.
  * @return string  The rendered string.
  */
 function render($msg)
@@ -32,10 +32,10 @@ function render($msg)
  * Shortcut for printing to `STDOUT`. The message and parameters are passed
  * through `sprintf` before output.
  *
- * @param string  $msg  The message to output in `printf` format.
- * @param mixed   ...   Either scalar arguments or a single array argument.
+ * @param  string $msg The message to output in `printf` format.
+ * @param  mixed   ...   Either scalar arguments or a single array argument.
  * @return void
- * @see \cli\render()
+ * @see    \cli\render()
  */
 function out($msg)
 {
@@ -45,10 +45,10 @@ function out($msg)
 /**
  * Pads `$msg` to the width of the shell before passing to `cli\out`.
  *
- * @param string  $msg  The message to pad and pass on.
- * @param mixed   ...   Either scalar arguments or a single array argument.
+ * @param  string $msg The message to pad and pass on.
+ * @param  mixed   ...   Either scalar arguments or a single array argument.
  * @return void
- * @see cli\out()
+ * @see    cli\out()
  */
 function out_padded($msg)
 {
@@ -70,9 +70,9 @@ function line($msg = '')
  * Shortcut for printing to `STDERR`. The message and parameters are passed
  * through `sprintf` before output.
  *
- * @param string  $msg  The message to output in `printf` format. With no string,
- *                      a newline is printed.
- * @param mixed   ...   Either scalar arguments or a single array argument.
+ * @param  string $msg The message to output in `printf` format. With no string,
+ *                     a newline is printed.
+ * @param  mixed   ...   Either scalar arguments or a single array argument.
  * @return void
  */
 function err($msg = '')
@@ -84,9 +84,9 @@ function err($msg = '')
  * Takes input from `STDIN` in the given format. If an end of transmission
  * character is sent (^D), an exception is thrown.
  *
- * @param string  $format  A valid input format. See `fscanf` for documentation.
- *                         If none is given, all input up to the first newline
- *                         is accepted.
+ * @param  string $format A valid input format. See `fscanf` for documentation.
+ *                        If none is given, all input up to the first newline
+ *                        is accepted.
  * @return string  The input with whitespace trimmed.
  * @throws \Exception  Thrown if ctrl-D (EOT) is sent as input.
  */
@@ -99,12 +99,12 @@ function input($format = null)
  * Displays an input prompt. If no default value is provided the prompt will
  * continue displaying until input is received.
  *
- * @param string  $question The question to ask the user.
- * @param string|false  $default  A default value if the user provides no input. Default false.
- * @param string  $marker   A string to append to the question and default value on display.
- * @param boolean $hide     If the user input should be hidden
+ * @param  string       $question The question to ask the user.
+ * @param  string|false $default  A default value if the user provides no input. Default false.
+ * @param  string       $marker   A string to append to the question and default value on display.
+ * @param  boolean      $hide     If the user input should be hidden
  * @return string  The users input.
- * @see cli\input()
+ * @see    cli\input()
  */
 function prompt($question, $default = false, $marker = ': ', $hide = false)
 {
@@ -115,12 +115,12 @@ function prompt($question, $default = false, $marker = ': ', $hide = false)
  * Presents a user with a multiple choice question, useful for 'yes/no' type
  * questions (which this function defaults too).
  *
- * @param string      $question   The question to ask the user.
- * @param string      $choice
- * @param string|null $default    The default choice. NULL if a default is not allowed.
+ * @param    string      $question The question to ask the user.
+ * @param    string      $choice
+ * @param    string|null $default  The default choice. NULL if a default is not allowed.
  * @internal param string $valid  A string of characters allowed as a response. Case
  *                                is ignored.
- * @return string  The users choice.
+ * @return   string  The users choice.
  * @see      cli\prompt()
  */
 function choose($question, $choice = 'yn', $default = 'n')
@@ -131,8 +131,8 @@ function choose($question, $choice = 'yn', $default = 'n')
 /**
  * Does the same as {@see choose()}, but always asks yes/no and returns a boolean
  *
- * @param string    $question  The question to ask the user.
- * @param bool|null $default   The default choice, in a boolean format.
+ * @param  string    $question The question to ask the user.
+ * @param  bool|null $default  The default choice, in a boolean format.
  * @return bool
  */
 function confirm($question, $default = false)
@@ -149,13 +149,13 @@ function confirm($question, $default = false)
  * choose an option. The array must be a single dimension with either strings
  * or objects with a `__toString()` method.
  *
- * @param array  $items   The list of items the user can choose from.
- * @param string $default The index of the default item.
- * @param string $title   The message displayed to the user when prompted.
+ * @param  array  $items   The list of items the user can choose from.
+ * @param  string $default The index of the default item.
+ * @param  string $title   The message displayed to the user when prompted.
  * @return string  The index of the chosen item.
- * @see cli\line()
- * @see cli\input()
- * @see cli\err()
+ * @see    cli\line()
+ * @see    cli\input()
+ * @see    cli\err()
  */
 function menu($items, $default = null, $title = 'Choose an item')
 {
@@ -410,7 +410,7 @@ function can_use_pcre_x()
 /**
  * Get the regexs generated from Unicode data.
  *
- * @param string $idx Optional. Return a specific regex only. Default null.
+ * @param  string $idx Optional. Return a specific regex only. Default null.
  * @return array|string  Returns keyed array if not given $idx or $idx doesn't exist, otherwise the specific regex string.
  */
 function get_unicode_regexs($idx = null)
@@ -419,7 +419,7 @@ function get_unicode_regexs($idx = null)
     static $m_regex; // Mark characters regex (Unicode property "M") - mark combining "Mc", mark enclosing "Me" and mark non-spacing "Mn" chars that should be ignored for spacing purposes.
     if (null === $eaw_regex) {
         // Load both regexs generated from Unicode data.
-        require __DIR__ . '/unicode/regex.php';
+        include __DIR__ . '/unicode/regex.php';
     }
 
     if (null !== $idx) {

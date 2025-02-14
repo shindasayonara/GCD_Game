@@ -21,7 +21,7 @@ class InvalidArguments extends \InvalidArgumentException
     protected $arguments;
 
     /**
-     * @param array  $arguments  A list of arguments that do not fit the profile.
+     * @param array $arguments A list of arguments that do not fit the profile.
      */
     public function __construct(array $arguments)
     {

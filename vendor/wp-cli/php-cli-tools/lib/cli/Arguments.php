@@ -38,7 +38,7 @@ class Arguments implements \ArrayAccess
      *
      * `'help'` is `true` by default, `'strict'` is false by default.
      *
-     * @param  array  $options  An array of options for this parser.
+     * @param array $options An array of options for this parser.
      */
     public function __construct($options = array())
     {
@@ -89,7 +89,7 @@ class Arguments implements \ArrayAccess
     /**
      * Returns true if a given argument was parsed.
      *
-     * @param mixed  $offset  An Argument object or the name of the argument.
+     * @param  mixed $offset An Argument object or the name of the argument.
      * @return bool
      */
     #[\ReturnTypeWillChange]
@@ -105,7 +105,7 @@ class Arguments implements \ArrayAccess
     /**
      * Get the parsed argument's value.
      *
-     * @param mixed  $offset  An Argument object or the name of the argument.
+     * @param  mixed $offset An Argument object or the name of the argument.
      * @return mixed
      */
     #[\ReturnTypeWillChange]
@@ -123,8 +123,8 @@ class Arguments implements \ArrayAccess
     /**
      * Sets the value of a parsed argument.
      *
-     * @param mixed  $offset  An Argument object or the name of the argument.
-     * @param mixed  $value   The value to set
+     * @param mixed $offset An Argument object or the name of the argument.
+     * @param mixed $value  The value to set
      */
     #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
@@ -139,7 +139,7 @@ class Arguments implements \ArrayAccess
     /**
      * Unset a parsed argument.
      *
-     * @param mixed  $offset  An Argument object or the name of the argument.
+     * @param mixed $offset An Argument object or the name of the argument.
      */
     #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
@@ -154,13 +154,13 @@ class Arguments implements \ArrayAccess
     /**
      * Adds a flag (boolean argument) to the argument list.
      *
-     * @param mixed  $flag  A string representing the flag, or an array of strings.
-     * @param array  $settings  An array of settings for this flag.
+     * @param   mixed $flag     A string representing the flag, or an array of strings.
+     * @param   array $settings An array of settings for this flag.
      * @setting string  description  A description to be shown in --help.
      * @setting bool    default  The default value for this flag.
      * @setting bool    stackable  Whether the flag is repeatable to increase the value.
      * @setting array   aliases  Other ways to trigger this flag.
-     * @return $this
+     * @return  $this
      */
     public function addFlag($flag, $settings = array())
     {
@@ -192,7 +192,7 @@ class Arguments implements \ArrayAccess
      * primary flag character, and the values should be the settings array
      * used by {addFlag}.
      *
-     * @param array  $flags  An array of flags to add
+     * @param  array $flags An array of flags to add
      * @return $this
      */
     public function addFlags($flags)
@@ -212,12 +212,12 @@ class Arguments implements \ArrayAccess
     /**
      * Adds an option (string argument) to the argument list.
      *
-     * @param mixed  $option  A string representing the option, or an array of strings.
-     * @param array  $settings  An array of settings for this option.
+     * @param   mixed $option   A string representing the option, or an array of strings.
+     * @param   array $settings An array of settings for this option.
      * @setting string  description  A description to be shown in --help.
      * @setting bool    default  The default value for this option.
      * @setting array   aliases  Other ways to trigger this option.
-     * @return $this
+     * @return  $this
      */
     public function addOption($option, $settings = array())
     {
@@ -248,7 +248,7 @@ class Arguments implements \ArrayAccess
      * primary option string, and the values should be the settings array
      * used by {addOption}.
      *
-     * @param array  $options  An array of options to add
+     * @param  array $options An array of options to add
      * @return $this
      */
     public function addOptions($options)
@@ -272,7 +272,7 @@ class Arguments implements \ArrayAccess
      * Even if strict is disabled, invalid arguments are logged and can be
      * retrieved with `cli\Arguments::getInvalidArguments()`.
      *
-     * @param bool  $strict  True to enable, false to disable.
+     * @param  bool $strict True to enable, false to disable.
      * @return $this
      */
     public function setStrict($strict)
@@ -294,8 +294,8 @@ class Arguments implements \ArrayAccess
     /**
      * Get a flag by primary matcher or any defined aliases.
      *
-     * @param mixed  $flag  Either a string representing the flag or an
-     *                      cli\arguments\Argument object.
+     * @param  mixed $flag Either a string representing the flag or an
+     *                     cli\arguments\Argument object.
      * @return array
      */
     public function getFlag($flag)
@@ -334,8 +334,8 @@ class Arguments implements \ArrayAccess
     /**
      * Returns true if the given argument is defined as a flag.
      *
-     * @param mixed  $argument  Either a string representing the flag or an
-     *                          cli\arguments\Argument object.
+     * @param  mixed $argument Either a string representing the flag or an
+     *                         cli\arguments\Argument object.
      * @return bool
      */
     public function isFlag($argument)
@@ -346,8 +346,8 @@ class Arguments implements \ArrayAccess
     /**
      * Returns true if the given flag is stackable.
      *
-     * @param mixed  $flag  Either a string representing the flag or an
-     *                      cli\arguments\Argument object.
+     * @param  mixed $flag Either a string representing the flag or an
+     *                     cli\arguments\Argument object.
      * @return bool
      */
     public function isStackable($flag)
@@ -360,7 +360,7 @@ class Arguments implements \ArrayAccess
     /**
      * Get an option by primary matcher or any defined aliases.
      *
-     * @param mixed  $option Either a string representing the option or an
+     * @param  mixed $option Either a string representing the option or an
      *                       cli\arguments\Argument object.
      * @return array
      */
@@ -399,8 +399,8 @@ class Arguments implements \ArrayAccess
     /**
      * Returns true if the given argument is defined as an option.
      *
-     * @param mixed  $argument  Either a string representing the option or an
-     *                          cli\arguments\Argument object.
+     * @param  mixed $argument Either a string representing the option or an
+     *                         cli\arguments\Argument object.
      * @return bool
      */
     public function isOption($argument)

@@ -4,7 +4,8 @@ error_reporting(-1);
 require_once __DIR__ . '/vendor/autoload.php';
 
 
-$args = new cli\Arguments(array(
+$args = new cli\Arguments(
+    array(
     'flags' => array(
         'verbose' => array(
             'description' => 'Turn on verbose mode',
@@ -22,7 +23,8 @@ $args = new cli\Arguments(array(
         )
     ),
     'strict' => true
-));
+    )
+);
 
 try {
     $args->parse();

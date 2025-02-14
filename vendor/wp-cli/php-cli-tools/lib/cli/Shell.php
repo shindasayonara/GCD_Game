@@ -23,7 +23,7 @@ class Shell
      * Returns the number of columns the current shell has for display.
      *
      * @return int  The number of columns.
-     * @todo Test on more systems.
+     * @todo   Test on more systems.
      */
     public static function columns()
     {
@@ -104,6 +104,7 @@ class Shell
 
     /**
      * Uses `stty` to hide input/output completely.
+     *
      * @param boolean $hidden Will hide/show the next data. Defaults to true.
      */
     public static function hide($hidden = true)

@@ -20,6 +20,7 @@ class Markdown extends Renderer
 {
     /**
      * How many spaces to indent by
+     *
      * @var int
      */
     protected $_padding = 2;
@@ -37,8 +38,8 @@ class Markdown extends Renderer
     /**
      * Renders the tree
      *
-     * @param array $tree
-     * @param int $level Optional
+     * @param  array $tree
+     * @param  int   $level Optional
      * @return string
      */
     public function render(array $tree, $level = 0)

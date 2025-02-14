@@ -28,8 +28,8 @@ abstract class Renderer
     /**
      * Set the widths of each column in the table.
      *
-     * @param array  $widths    The widths of the columns.
-     * @param bool   $fallback  Whether to use these values as fallback only.
+     * @param array $widths   The widths of the columns.
+     * @param bool  $fallback Whether to use these values as fallback only.
      */
     public function setWidths(array $widths, $fallback = false)
     {
@@ -55,7 +55,7 @@ abstract class Renderer
     /**
      * Renders a row for output.
      *
-     * @param array  $row  The table row.
+     * @param  array $row The table row.
      * @return string  The formatted table row.
      */
     abstract public function row(array $row);

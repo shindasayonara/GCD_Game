@@ -16,7 +16,7 @@ function cli_autoload($className)
         return;
     }
 
-    require dirname(__DIR__) . '/lib/' . $fileName;
+    include dirname(__DIR__) . '/lib/' . $fileName;
 }
 
 spl_autoload_register('cli_autoload');

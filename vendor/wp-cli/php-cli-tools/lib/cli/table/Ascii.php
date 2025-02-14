@@ -34,8 +34,8 @@ class Ascii extends Renderer
     /**
      * Set the widths of each column in the table.
      *
-     * @param array  $widths    The widths of the columns.
-     * @param bool   $fallback  Whether to use these values as fallback only.
+     * @param array $widths   The widths of the columns.
+     * @param bool  $fallback Whether to use these values as fallback only.
      */
     public function setWidths(array $widths, $fallback = false)
     {
@@ -101,7 +101,7 @@ class Ascii extends Renderer
      *
      * The keys `corner`, `line` and `border` are used in rendering.
      *
-     * @param $characters  array  Characters used in rendering.
+     * @param $characters array  Characters used in rendering.
      */
     public function setCharacters(array $characters)
     {
@@ -130,7 +130,7 @@ class Ascii extends Renderer
     /**
      * Renders a row for output.
      *
-     * @param array  $row  The table row.
+     * @param  array $row The table row.
      * @return string  The formatted table row.
      */
     public function row(array $row)
@@ -218,7 +218,7 @@ class Ascii extends Renderer
     /**
      * Is a column pre-colorized?
      *
-     * @param int $column Column index to check.
+     * @param  int $column Column index to check.
      * @return bool True if whole table is marked as pre-colorized, or if the individual column is pre-colorized; else false.
      */
     public function isPreColorized($column)
