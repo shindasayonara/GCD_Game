@@ -36,14 +36,16 @@ function saveGame($playerName, $num1, $num2, $gcd, $answer, $result)
 function getPlayersWithGames()
 {
     $pdo = getDBConnection();
-    $stmt = $pdo->query("
+    $stmt = $pdo->query(
+        "
     SELECT players.name, 
            DATETIME(games.played_at, '+3 hours') AS played_at, 
            games.number1, games.number2, games.gcd, games.player_answer, games.result 
     FROM games 
     JOIN players ON games.player_id = players.id
     ORDER BY games.played_at DESC
-");
+"
+    );
 
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -47,13 +47,13 @@ function startWebGame($playerName)
         <title>Игра</title>
     </head>
     <body>
-        <h2>Привет, <?= htmlspecialchars($playerName) ?>! Найди НОД:</h2>
-        <p>Числа: <b><?= $num1 ?></b> и <b><?= $num2 ?></b></p>
+        <h2>Привет, <?php echo htmlspecialchars($playerName) ?>! Найди НОД:</h2>
+        <p>Числа: <b><?php echo $num1 ?></b> и <b><?php echo $num2 ?></b></p>
         <form method="post" action="result.php">
-            <input type="hidden" name="playerName" value="<?= htmlspecialchars($playerName) ?>">
-            <input type="hidden" name="num1" value="<?= $num1 ?>">
-            <input type="hidden" name="num2" value="<?= $num2 ?>">
-            <input type="hidden" name="correctGCD" value="<?= $correctGCD ?>">
+            <input type="hidden" name="playerName" value="<?php echo htmlspecialchars($playerName) ?>">
+            <input type="hidden" name="num1" value="<?php echo $num1 ?>">
+            <input type="hidden" name="num2" value="<?php echo $num2 ?>">
+            <input type="hidden" name="correctGCD" value="<?php echo $correctGCD ?>">
             <label>Введите ваш ответ:</label>
             <input type="number" name="playerAnswer" required>
             <button type="submit">Проверить</button>

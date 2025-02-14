@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </head>
     <body>
         <h2>Результат</h2>
-        <p><?= $result ?></p>
+        <p><?php echo $result ?></p>
         <a href="index.php">Играть снова</a>
     </body>
     </html>

@@ -32,12 +32,12 @@ $players = Database\getPlayersWithGames();
         </tr>
         <?php foreach ($players as $player): ?>
             <tr>
-                <td><?= htmlspecialchars($player['name']) ?></td>
-                <td><?= $player['played_at'] ?></td>
-                <td><?= "{$player['number1']} и {$player['number2']}" ?></td>
-                <td><?= $player['gcd'] ?></td>
-                <td><?= $player['player_answer'] ?></td>
-                <td><?= $player['result'] ?></td>
+                <td><?php echo htmlspecialchars($player['name']) ?></td>
+                <td><?php echo $player['played_at'] ?></td>
+                <td><?php echo "{$player['number1']} и {$player['number2']}" ?></td>
+                <td><?php echo $player['gcd'] ?></td>
+                <td><?php echo $player['player_answer'] ?></td>
+                <td><?php echo $player['result'] ?></td>
             </tr>
         <?php endforeach; ?>
     </table>
