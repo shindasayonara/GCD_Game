@@ -90,7 +90,8 @@ class Test_Table extends TestCase
             return array_map(
                 function ($v) {
                     return substr($v, 2, -2);
-                }, $a
+                },
+                $a
             );
         };
 

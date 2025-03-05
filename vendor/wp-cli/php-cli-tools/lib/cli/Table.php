@@ -187,7 +187,8 @@ class Table
         }
 
         usort(
-            $this->_rows, function ($a, $b) use ($column) {
+            $this->_rows,
+            function ($a, $b) use ($column) {
                 return strcmp($a[$column], $b[$column]);
             }
         );

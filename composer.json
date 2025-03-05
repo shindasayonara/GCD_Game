@@ -10,7 +10,8 @@
         "files": [
             "src/Controller.php",
             "src/View.php",
-            "src/Database.php"
+            "src/Database.php",
+            "src/Game.php"
         ]
     },
     "bin": [
@@ -24,6 +25,8 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "wp-cli/php-cli-tools": "^0.12.0"
+        "wp-cli/php-cli-tools": "^0.12.0",
+        "slim/slim": "^4.0",
+        "slim/psr7": "^1.6"
     }
 }
